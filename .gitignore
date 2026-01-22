@@ -1,0 +1,39 @@
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+
+# Swift Package Manager
+#
+.build/
+Packages/
+
+# CocoaPods (caso decidamos usar no futuro, mas estamos com SPM)
+#
+Pods/
+Podfile.lock
+
+# OS X files
+#
+.DS_Store
+
+# Fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
