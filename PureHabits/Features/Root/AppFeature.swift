@@ -13,18 +13,21 @@ import SwiftUI
 struct AppFeature {
     @ObservableState
     struct State: Equatable {
+        var habitList = HabitListFeature.State(
+            habits: [
+                .mockUncompleted,
+                .mockCompleted
+            ]
+        )
     }
 
-    enum Action: Equatable {
-        case onAppear
+    enum Action {
+        case habitList(HabitListFeature.Action)
     }
 
     var body: some Reducer<State, Action> {
-        Reduce { (state: inout State, action: Action) -> Effect<Action> in
-            switch action {
-            case .onAppear:
-                return .none
-            }
+        Scope(state: \.habitList, action: \.habitList) {
+            HabitListFeature()
         }
     }
 }
@@ -34,16 +37,9 @@ struct AppView: View {
     let store: StoreOf<AppFeature>
 
     var body: some View {
-        VStack {
-            Image(systemName: "checkmark.circle.fill")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Welcome to PureHabits")
-        }
-        .padding()
-        .onAppear {
-            store.send(.onAppear)
-        }
+        HabitListView(
+            store: store.scope(state: \.habitList, action: \.habitList)
+        )
     }
 }
 
