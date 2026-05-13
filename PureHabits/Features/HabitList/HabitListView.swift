@@ -47,12 +47,14 @@ public struct HabitListView: View {
                     }
                 }
             }
+            .sheet(item: $store.scope(state: \.addHabit, action: \.addHabit)) { addHabitStore in
+                AddHabitView(store: addHabitStore)
+            }
         }
     }
 }
 
 // MARK: - Preview
-
 #Preview {
     HabitListView(
         store: Store(
