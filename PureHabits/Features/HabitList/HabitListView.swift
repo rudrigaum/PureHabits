@@ -19,7 +19,7 @@ public struct HabitListView: View {
     public var body: some View {
         NavigationStack {
             List {
-                ForEach(store.habits) { habit in
+                ForEach(store.habits, id: \.id) { habit in
                     HStack {
                         Text(habit.title)
                             .strikethrough(habit.isCompleted, color: .secondary)
@@ -58,12 +58,7 @@ public struct HabitListView: View {
 #Preview {
     HabitListView(
         store: Store(
-            initialState: HabitListFeature.State(
-                habits: [
-                    .mockUncompleted,
-                    .mockCompleted
-                ]
-            ),
+            initialState: HabitListFeature.State(),
             reducer: { HabitListFeature() }
         )
     )
