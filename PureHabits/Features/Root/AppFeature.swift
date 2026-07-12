@@ -13,12 +13,7 @@ import SwiftUI
 struct AppFeature {
     @ObservableState
     struct State: Equatable {
-        var habitList = HabitListFeature.State(
-            habits: [
-                .mockUncompleted,
-                .mockCompleted
-            ]
-        )
+        var habitList = HabitListFeature.State()
     }
 
     enum Action {
