@@ -1,39 +1,52 @@
-# Xcode
-#
+# ##########################
+# Xcode & macOS Baseline
+# ##########################
 build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
 *.pbxuser
 !default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata/
 *.xccheckout
 *.moved-aside
-DerivedData/
 *.hmap
 *.ipa
-*.xcuserstate
 
-# Swift Package Manager
-#
+# Debug Symbols (Crucial for repository size optimization)
+*.dSYM.zip
+*.dSYM
+
+# OS X files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ##########################
+# Swift Package Manager (SPM)
+# ##########################
 .build/
 Packages/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+.swiftpm/xcode/project.xcworkspace/xcuserdata/
 
-# CocoaPods (caso decidamos usar no futuro, mas estamos com SPM)
-#
+# ##########################
+# CocoaPods
+# ##########################
 Pods/
 Podfile.lock
 
-# OS X files
-#
-.DS_Store
-
-# Fastlane
-#
+# ##########################
+# Fastlane & Automation
+# ##########################
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots
+fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# ##########################
+# Security & Environment (Enterprise Standard)
+# ##########################
+# Never commit private keys, tokens, or local environment configurations
+.env
+.env.*
+*.plist.local
