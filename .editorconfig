@@ -1,0 +1,25 @@
+# EditorConfig - http://editorconfig.org
+
+# Tells the editor that this is the root configuration file
+root = true
+
+# Global defaults for all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Swift specific formatting (Xcode standard)
+[*.swift]
+indent_style = space
+indent_size = 4
+
+# Web / Build / Metadata configurations (YAML, JSON, Markdown)
+[*.{json, yml, yaml, md}]
+indent_style = space
+indent_size = 2
+
+# Makefiles and build scripts
+[Makefile]
+indent_style = tab
