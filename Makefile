@@ -24,8 +24,10 @@ test:
 	@echo "🧪 Running unit tests (Swift Testing)..."
 	xcodebuild -project PureHabits.xcodeproj \
 		-scheme PureHabits \
-		-destination 'platform=iOS Simulator,name=iPhone 15' \
+		-destination 'platform=iOS Simulator,name=iPhone 18 Pro,OS=27.0' \
+		-parallel-testing-enabled NO \
 		test
+
 
 clean:
 	@echo "🧹 Cleaning Xcode build folder and temporary files..."
