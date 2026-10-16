@@ -41,11 +41,14 @@ public struct HabitListFeature {
                 }
                 return .none
                 
+
             case let .addHabit(.presented(.delegate(.didSaveHabit(newHabit)))):
-                
                 _ = state.$habits.withLock { habits in
                     habits.append(newHabit)
                 }
+
+                state.addHabit = nil
+
                 return .none
                 
             case .addHabit:
