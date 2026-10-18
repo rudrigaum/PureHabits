@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "8C2C1C29-D388-42E5-83E6-A38F6EEC0603",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PureHabits.xcodeproj",
+      "identifier" : "18030C642F22B88600E827AC",
+      "name" : "PureHabits"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:PureHabits.xcodeproj",
+        "identifier" : "18030C712F22B88800E827AC",
+        "name" : "PureHabitsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:PureHabits.xcodeproj",
+        "identifier" : "18030C7B2F22B88800E827AC",
+        "name" : "PureHabitsUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
